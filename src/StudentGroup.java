@@ -15,6 +15,7 @@ public class StudentGroup implements StudentArrayOperation {
 
 	private Student[] students;
 	int itr;
+	int i;
 
 	/**
 	 * DO NOT remove or change this constructor, it will be used during task check
@@ -61,13 +62,42 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void addFirst(Student student) {
+	    try{
+		if(student==null)
+            {
+                throw new IllegalArgumentException();
+            }
+            }catch(IllegalArgumentException e){}
+
+            for(itr=students.length;itr>0;itr--)
+            {
+                i=i+1;
+                students[i]=students[itr];
+
+
+            }
+            students[0]=student;
+
 		// Add your implementation here
 	}
 
 	@Override
 	public void addLast(Student student) {
 		// Add your implementation here
-	}
+
+		try{
+		if(student==null)
+            {
+                throw new IllegalArgumentException();
+            }
+            }catch(IllegalArgumentException e){}
+            itr=students.length;
+
+            //this is for adding students at last
+
+            students[itr++]=student;
+		}
+
 
 	@Override
 	public void add(Student student, int index) {
