@@ -101,6 +101,15 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void add(Student student, int index) {
+	    try{
+		if(student==null)
+            {
+                throw new IllegalArgumentException();
+            }
+            }catch(IllegalArgumentException e){}
+
+            students[index]=student;
+
 		// Add your implementation here
 	}
 
